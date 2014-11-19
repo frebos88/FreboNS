@@ -1,0 +1,9 @@
+#!/bin/bash
+
+FILE="bin/frebons"
+
+if [ -f "$FILE" ]; then
+	./$FILE
+else
+	echo "You must build first :)"
+fi

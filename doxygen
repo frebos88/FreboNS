@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "   ____        __        _  ______"
+echo "  / __/______ / /  ___  / |/ / __/"
+echo " / _// __/ -_) _ \\/ _ \/    /\\ \\"
+echo "/_/ /_/  \\__/_.__/\\___/_/|_/___/"
+echo "     Building documentation"
+echo
+echo Started: $(date)
+echo
+
+./bin/doxygen conf/doxygen.conf
+
+echo "Done..."

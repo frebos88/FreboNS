@@ -1,0 +1,31 @@
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+
+CREATE TABLE IF NOT EXISTS `domains` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) NOT NULL,
+  `nameserver` varchar(256) DEFAULT NULL,
+  `email` varchar(128) DEFAULT NULL,
+  `serial` int(11) DEFAULT NULL,
+  `refresh` int(11) DEFAULT NULL,
+  `retry` int(11) DEFAULT NULL,
+  `expire` int(11) DEFAULT NULL,
+  `minimum` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `records` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `domain_id` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `ttl` int(11) NOT NULL,
+  `content` varchar(256) NOT NULL,
+  `priority` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
